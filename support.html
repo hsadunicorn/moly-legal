@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<!--
+  Moly 지원 페이지 (App Store 지원 URL용). GitHub Pages moly-legal 저장소에
+  support.html 로 올리면 https://hsadunicorn.github.io/moly-legal/support.html 로 노출.
+-->
+<html lang="ko">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Moly 지원 · Support</title>
+<style>
+  :root {
+    --bg: #FEFCF8;
+    --surface: #FFFFFF;
+    --stroke: #E6E1D7;
+    --brand: #408D57;
+    --brand-dark: #1A3D2B;
+    --lime: #C6E57E;
+    --text: #111111;
+    --text-2: #6D766E;
+    --radius: 16px;
+  }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; }
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+      "Apple SD Gothic Neo", "Noto Sans KR", sans-serif;
+    line-height: 1.65;
+    -webkit-font-smoothing: antialiased;
+  }
+  .wrap { max-width: 640px; margin: 0 auto; padding: 32px 20px 64px; }
+
+  header { text-align: center; padding: 24px 0 8px; }
+  .logo { font-size: 34px; font-weight: 800; color: var(--brand); letter-spacing: -0.5px; }
+  .logo .sprout { font-size: 30px; }
+  .tagline { color: var(--text-2); margin-top: 6px; font-size: 15px; }
+
+  .langbar { display: flex; justify-content: center; gap: 6px; margin: 18px 0 28px; }
+  .langbar button {
+    border: 1px solid var(--stroke); background: var(--surface); color: var(--text-2);
+    border-radius: 999px; padding: 6px 16px; font-size: 14px; cursor: pointer;
+    font-weight: 600;
+  }
+  .langbar button.active { background: var(--brand); color: #fff; border-color: var(--brand); }
+
+  .card {
+    background: var(--surface); border: 1px solid var(--stroke);
+    border-radius: var(--radius); padding: 24px; margin: 16px 0;
+  }
+  h2 { font-size: 20px; margin: 4px 0 12px; }
+  .contact-card { text-align: center; }
+  .contact-card p { color: var(--text-2); margin: 4px 0 18px; font-size: 15px; }
+  .email-btn {
+    display: inline-block; background: var(--brand); color: #fff; text-decoration: none;
+    font-weight: 700; padding: 14px 28px; border-radius: 12px; font-size: 16px;
+  }
+  .email-btn:active { background: var(--brand-dark); }
+  .response { margin-top: 14px; font-size: 13px; color: var(--text-2); }
+
+  details {
+    border-bottom: 1px solid var(--stroke); padding: 14px 2px;
+  }
+  details:last-child { border-bottom: none; }
+  summary {
+    cursor: pointer; font-weight: 600; font-size: 16px; list-style: none;
+    display: flex; justify-content: space-between; align-items: center;
+  }
+  summary::-webkit-details-marker { display: none; }
+  summary::after { content: "+"; color: var(--brand); font-size: 22px; font-weight: 400; }
+  details[open] summary::after { content: "\2212"; }
+  details p { color: var(--text-2); font-size: 15px; margin: 10px 0 2px; }
+
+  .links { display: flex; gap: 10px; flex-wrap: wrap; justify-content: center; margin-top: 8px; }
+  .links a {
+    color: var(--brand); text-decoration: none; font-weight: 600; font-size: 15px;
+    border: 1px solid var(--stroke); border-radius: 999px; padding: 8px 18px; background: var(--surface);
+  }
+  footer { text-align: center; color: var(--text-2); font-size: 13px; margin-top: 36px; }
+
+  [data-lang] { display: none; }
+  body.ko [data-lang="ko"] { display: revert; }
+  body.en [data-lang="en"] { display: revert; }
+  .langbar button[data-lang] { display: inline-block; }
+</style>
+</head>
+<body class="ko">
+<div class="wrap">
+  <header>
+    <div class="logo"><span class="sprout">🌱</span> moly</div>
+    <div class="tagline">
+      <span data-lang="ko">식물과 더 가까워지는 시간</span>
+      <span data-lang="en">Get closer to your plants</span>
+    </div>
+  </header>
+
+  <div class="langbar">
+    <button id="btn-ko" class="active" onclick="setLang('ko')">한국어</button>
+    <button id="btn-en" onclick="setLang('en')">English</button>
+  </div>
+
+  <!-- 문의 -->
+  <div class="card contact-card">
+    <h2><span data-lang="ko">도움이 필요하신가요?</span><span data-lang="en">Need help?</span></h2>
+    <p>
+      <span data-lang="ko">Moly 사용 중 궁금한 점이나 문제가 있으면 편하게 연락 주세요.</span>
+      <span data-lang="en">Have a question or an issue with Moly? Reach out anytime.</span>
+    </p>
+    <a class="email-btn" href="mailto:sunlee334@gmail.com?subject=Moly%20Support">
+      sunlee334@gmail.com
+    </a>
+    <div class="response">
+      <span data-lang="ko">보통 1~2일 내에 답변드립니다.</span>
+      <span data-lang="en">We usually reply within 1–2 business days.</span>
+    </div>
+  </div>
+
+  <!-- FAQ -->
+  <div class="card">
+    <h2><span data-lang="ko">자주 묻는 질문</span><span data-lang="en">FAQ</span></h2>
+
+    <details>
+      <summary><span data-lang="ko">계정을 삭제하려면 어떻게 하나요?</span><span data-lang="en">How do I delete my account?</span></summary>
+      <p data-lang="ko">앱에서 <b>설정 → 계정 → 계정 삭제</b>를 선택하면 계정과 관련 데이터가 영구 삭제됩니다.</p>
+      <p data-lang="en">In the app, go to <b>Settings → Account → Delete Account</b>. Your account and associated data are permanently removed.</p>
+    </details>
+
+    <details>
+      <summary><span data-lang="ko">식물 식별은 어떻게 하나요?</span><span data-lang="en">How does plant identification work?</span></summary>
+      <p data-lang="ko">식물 사진을 찍거나 갤러리에서 선택하면 몰리가 종류와 특징, 케어 정보를 알려드립니다.</p>
+      <p data-lang="en">Take a photo or pick one from your gallery, and Moly identifies the plant with its traits and care tips.</p>
+    </details>
+
+    <details>
+      <summary><span data-lang="ko">물주기 알림이 오지 않아요.</span><span data-lang="en">I'm not getting watering reminders.</span></summary>
+      <p data-lang="ko">기기 <b>설정 → 알림 → Moly</b>에서 알림이 허용되어 있는지 확인해 주세요. 각 식물의 케어 일정도 함께 확인해 보세요.</p>
+      <p data-lang="en">Check that notifications are enabled in <b>Settings → Notifications → Moly</b> on your device, and verify each plant's care schedule.</p>
+    </details>
+
+    <details>
+      <summary><span data-lang="ko">내 데이터는 어떻게 관리되나요?</span><span data-lang="en">How is my data handled?</span></summary>
+      <p data-lang="ko">계정·식물·사진 등은 서비스 제공을 위해서만 사용되며 광고 추적에 사용되지 않습니다. 자세한 내용은 개인정보 처리방침을 참고하세요.</p>
+      <p data-lang="en">Your account, plants, and photos are used only to provide the service and are never used for ad tracking. See our Privacy Policy for details.</p>
+    </details>
+  </div>
+
+  <!-- 링크 -->
+  <div class="card" style="text-align:center;">
+    <h2><span data-lang="ko">약관 및 정책</span><span data-lang="en">Legal</span></h2>
+    <div class="links">
+      <a href="https://hsadunicorn.github.io/moly-legal/privacy.html">
+        <span data-lang="ko">개인정보 처리방침</span><span data-lang="en">Privacy Policy</span>
+      </a>
+      <a href="https://hsadunicorn.github.io/moly-legal/terms.html">
+        <span data-lang="ko">이용약관</span><span data-lang="en">Terms of Service</span>
+      </a>
+    </div>
+  </div>
+
+  <footer>
+    <p>© 2026 Moly · <span data-lang="ko">모든 문의는 위 이메일로 연락 주세요.</span><span data-lang="en">For all inquiries, use the email above.</span></p>
+  </footer>
+</div>
+
+<script>
+  function setLang(l) {
+    document.body.className = l;
+    document.documentElement.lang = l;
+    document.getElementById('btn-ko').classList.toggle('active', l === 'ko');
+    document.getElementById('btn-en').classList.toggle('active', l === 'en');
+  }
+
+  // 최초 표시 언어는 브라우저 언어를 따른다(한국어 기기만 ko, 나머지는 en).
+  setLang((navigator.language || 'en').toLowerCase().startsWith('ko') ? 'ko' : 'en');
+</script>
+</body>
+</html>
